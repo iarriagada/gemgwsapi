@@ -40,7 +40,8 @@ def connect_epics_chans(chan_dict):
         # TODO: Automatic retries
         print(f"{c}= {epics_chans[c].value}")
     return epics_chans
-ef mon_epics_chans(epics_chans, epics_key, api_dict):
+
+def mon_epics_chans(epics_chans, epics_key, api_dict):
     for c in epics_chans:
         # Initialize the values for each PV, before starting the monitor
         api_dict[epics_key[c]]['value'] = epics_chans[c].value
